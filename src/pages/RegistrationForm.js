@@ -4,8 +4,8 @@ import React, { useState, useEffect } from 'react'
 const useStyle = makeStyles(theme => ({
     root:{
         '& .MuiFormControl-root': {
-            width: '80%',
-            margin: theme.spacing(1)
+            width: '90%',
+            margin: theme.spacing(1),
         }
     }
 }))
@@ -32,40 +32,44 @@ function RegistrationForm() {
     }
 
     return (
-        <form className={classes.root}>
-            <Grid container>
+        <form className={classes.root} justify='center' display='flex'>
+            <Grid container spacing={2} >
                 <Grid item xs={6}>
                     <TextField 
-                    variant="outlined"
-                    label="Nama Tempat"
-                    name="namatempat"
-                    value={values.name}
-                    onChange ={handleInputChange}
-                    />
-                    <TextField 
-                    variant="outlined"
-                    label="Alamat"
-                    name="alamat"
-                    value={values.address}
-                    onChange={handleInputChange}
+                        variant="outlined"
+                        label="Nama Tempat"
+                        name="namatempat"
+                        value={values.name}
+                        onChange ={handleInputChange}
                     />
                 </Grid>
                 <Grid item xs={6}>
                 <TextField 
-                    variant="outlined"
-                    label="Harga"
-                    name="harga"
-                    value={values.price}
-                    onChange={handleInputChange}
+                        variant="outlined"
+                        label="Harga"
+                        name="harga"
+                        value={values.price}
+                        onChange={handleInputChange}
+                    />
+                </Grid>
+            </Grid>
+            <Grid container spacing={2}>    
+                <Grid item xs={12}>
+                <TextField 
+                        variant="outlined"
+                        label="Alamat"
+                        name="alamat"
+                        value={values.address}
+                        onChange={handleInputChange}
                     />
                     <TextField 
-                    variant="outlined"
-                    label="Description"
-                    multiline
-                    rows={4}
-                    name="description"
-                    value={values.description}
-                    onChange={handleInputChange}
+                        variant="outlined"
+                        label="Description"
+                        multiline
+                        rows={4}
+                        name="description"
+                        value={values.description}
+                        onChange={handleInputChange}
                     />
                 </Grid>
             </Grid>
