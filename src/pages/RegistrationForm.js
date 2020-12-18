@@ -1,4 +1,4 @@
-import { TextField, Grid, makeStyles } from '@material-ui/core';
+import { TextField, Grid, makeStyles, Button } from '@material-ui/core';
 import React, { useState, useEffect } from 'react'
 
 const useStyle = makeStyles(theme => ({
@@ -6,6 +6,9 @@ const useStyle = makeStyles(theme => ({
         '& .MuiFormControl-root': {
             width: '90%',
             margin: theme.spacing(1),
+        },
+        '& .MuiButtonBase-root': {
+            margin: theme.spacing(1)
         }
     }
 }))
@@ -33,7 +36,7 @@ function RegistrationForm() {
 
     return (
         <form className={classes.root} justify='center' display='flex'>
-            <Grid container spacing={2} >
+            <Grid container spacing={1  } >
                 <Grid item xs={6}>
                     <TextField 
                         variant="outlined"
@@ -53,7 +56,7 @@ function RegistrationForm() {
                     />
                 </Grid>
             </Grid>
-            <Grid container spacing={2}>    
+            <Grid container spacing={1}>    
                 <Grid item xs={12}>
                 <TextField 
                         variant="outlined"
@@ -72,6 +75,7 @@ function RegistrationForm() {
                         onChange={handleInputChange}
                     />
                 </Grid>
+                <Button variant="contained" color="primary">Kirim</Button>
             </Grid>
         </form>
     )
